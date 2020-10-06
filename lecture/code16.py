@@ -1,4 +1,5 @@
 def prefixes(x):
     if x:
-       yield from prefixes(x[:-1])
-       yield x
+        yield x
+        yield from prefixes(x[:-1])
+      
