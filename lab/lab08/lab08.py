@@ -469,11 +469,11 @@ def prune_small(t, n):
     >>> t3
     Tree(6, [Tree(1), Tree(3, [Tree(1), Tree(2)])])
     """
-    while ___________________________:
-        largest = max(_______________, key=____________________)
-        _________________________
-    for __ in _____________:
-        ___________________
+    while len(t.branches)>n:
+        largest = max(t.branches, key=lambda t:t.label)
+        t.branches.remove(largest)
+    for b in t.branches:
+        prune_small(b,n)
 
 # Recursion / Tree Recursion
 def num_trees(n):
@@ -496,9 +496,9 @@ def num_trees(n):
     429
 
     """
-    if ____________________:
-        return _______________
-    return _______________
+    if n==1 or n==2:
+        return 1
+    return 2*num_trees(n-1)
 
 
 # Tree class
