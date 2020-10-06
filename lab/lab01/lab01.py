@@ -63,4 +63,15 @@ def double_eights(n):
     >>> double_eights(80808080)
     False
     """
-    # TODO
+    while n>0:
+        
+        if n%10==8:
+            n=n//10
+            if n%10==8:
+                return True
+            else:
+                return False
+        else:
+            n=n//10
+    return False
+            
