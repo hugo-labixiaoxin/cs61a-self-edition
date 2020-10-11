@@ -176,7 +176,7 @@ class ThrowerAnt(Ant):
         """
         # BEGIN Problem 3 and 4
         space=0
-        while self.place !=beehive and space>=min_range and space<=max_range:
+        while self.place !=beehive and space>=self.min_range and space<=self.max_range:
             if self.place.bees :
                 return random_or_none(self.place.bees) # REPLACE THIS LINE
             space+=1
@@ -400,7 +400,7 @@ class Water(Place):
         """Add an Insect to this place. If the insect is not watersafe, reduce
         its armor to 0."""
         # BEGIN Problem 11
-        self.add_insect(self,insect)
+        Place.add_insect(self,insect)
         if not insect.is_watersafe:
             insect.reduce_armor(insect.armor)
         # END Problem 11
