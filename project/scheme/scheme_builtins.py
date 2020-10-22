@@ -76,7 +76,7 @@ def scheme_eqp(x, y):
 @builtin("pair?")
 def scheme_pairp(x):
     return type(x).__name__ == 'Pair'
-
+    
 @builtin("scheme-valid-cdr?")
 def scheme_valid_cdrp(x):
     return scheme_pairp(x) or scheme_nullp(x) or scheme_promisep(x)
